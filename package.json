@@ -1,0 +1,26 @@
+{
+  "name": "dllist-react-app",
+  "version": "0.1.0",
+  "author": "boxgames1",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-scss": "^1.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "gulp": "gulp",
+    "watch": "gulp watch"
+  }
+}

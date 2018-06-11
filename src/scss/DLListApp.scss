@@ -1,0 +1,83 @@
+$table-border: 1px solid #535252;
+.Hash-Table-App {
+  & .App-buttons {
+    display: inline-block;
+    margin: 20px;
+    & .pull-left {
+      float: left;
+    }
+    & input {
+      height: 38px;
+      margin-right: 20px;
+      padding-left: 5px;
+    }
+    & #size-new {
+      width: 50px;
+    }
+    & #add-content,
+    & #find,
+    & #erase {
+      width: 140px;
+    }
+  }
+  & .App-canvas {
+    height: calc(100vh - 245px);
+    overflow: auto;
+    & .content {
+      width: auto;
+      height: auto;
+      padding-bottom: 20px;
+
+      & .dllist {
+        position: absolute;
+        top: 10px;
+        left: 165px;
+        display: inline-flex;
+        & .dllistnode {
+          height: 40px;
+          float: left;
+          padding: 0;
+          width: 100px;
+          border: $table-border;
+          position: relative;
+          margin-left: 30px;
+          & .arrow {
+            margin-top: 6px;
+            position: absolute;
+            float: left;
+            left: -30px;
+            &.initial-arrow {
+              left: -59px;
+            }
+          }
+          &.found {
+            border: 2px solid orangered;
+            background: rgb(243, 243, 208);
+          }
+          &.found .value {
+            border-right: 2px solid orangered;
+          }
+          &.header {
+            margin-left: 59px;
+          }
+          & .value {
+            float: left;
+            width: 80px;
+            border-right: $table-border;
+            height: 38px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 15px;
+            padding: 8px;
+            text-align: left;
+          }
+          & .next {
+            width: 20px;
+            float: left;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.Hash-Table-App .App-buttons {
+  display: inline-block;
+  margin: 20px; }
+
+.Hash-Table-App .App-buttons .pull-left {
+  float: left; }
+
+.Hash-Table-App .App-buttons input {
+  height: 38px;
+  margin-right: 20px;
+  padding-left: 5px; }
+
+.Hash-Table-App .App-buttons #size-new {
+  width: 50px; }
+
+.Hash-Table-App .App-buttons #add-content,
+.Hash-Table-App .App-buttons #find,
+.Hash-Table-App .App-buttons #erase {
+  width: 140px; }
+
+.Hash-Table-App .App-canvas {
+  height: calc(100vh - 245px);
+  overflow: auto; }
+
+.Hash-Table-App .App-canvas .content {
+  width: auto;
+  height: auto;
+  padding-bottom: 20px; }
+
+.Hash-Table-App .App-canvas .content .dllist {
+  position: absolute;
+  top: 10px;
+  left: 165px;
+  display: inline-flex; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode {
+  height: 40px;
+  float: left;
+  padding: 0;
+  width: 100px;
+  border: 1px solid #535252;
+  position: relative;
+  margin-left: 30px; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode .arrow {
+  margin-top: 6px;
+  position: absolute;
+  float: left;
+  left: -30px; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode .arrow.initial-arrow {
+  left: -59px; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode.found {
+  border: 2px solid orangered;
+  background: #f3f3d0; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode.found .value {
+  border-right: 2px solid orangered; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode.header {
+  margin-left: 59px; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode .value {
+  float: left;
+  width: 80px;
+  border-right: 1px solid #535252;
+  height: 38px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  padding: 8px;
+  text-align: left; }
+
+.Hash-Table-App .App-canvas .content .dllist .dllistnode .next {
+  width: 20px;
+  float: left; }
