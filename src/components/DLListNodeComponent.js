@@ -1,15 +1,16 @@
 import React from "react";
 
-const DLListNodeComponent = ({ value }) => {
-  console.log(value);
+const DLListNodeComponent = props => {
   return (
-    <div className="dllistnode" data-key={value} title={value}>
-      <div className="arrows">
-        <div className="arrow">--→</div>
-        <div className="arrow back-arrow">←--</div>
-      </div>
+    <div className="dllistnode" data-key={props.value} title={props.value}>
+      {props.prev && (
+        <div className="arrows">
+          <div className="arrow right-arrow">----&gt;</div>
+          <div className="arrow left-arrow">&lt;----</div>
+        </div>
+      )}
       <div className="prev" />
-      <div className="value">{value}</div>
+      <div className="value">{props.value}</div>
       <div className="next" />
     </div>
   );

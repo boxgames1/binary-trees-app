@@ -2,6 +2,9 @@
   display: inline-block;
   margin: 20px; }
 
+.Hash-Table-App .App-buttons button {
+  margin: 0 5px; }
+
 .Hash-Table-App .App-buttons .pull-left {
   float: left; }
 
@@ -27,13 +30,13 @@
   height: auto;
   padding-bottom: 20px; }
 
-.Hash-Table-App .App-canvas .content .dllist {
+.Hash-Table-App .App-canvas .content .dLlist {
   position: absolute;
   top: 10px;
   left: 165px;
   display: inline-flex; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode {
   height: 40px;
   float: left;
   padding: 0;
@@ -42,26 +45,30 @@
   position: relative;
   margin-left: 30px; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode .arrow {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode .arrow {
   margin-top: 6px;
   position: absolute;
   float: left;
-  left: -30px; }
+  left: -30px;
+  font-size: 15px; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode .arrow.initial-arrow {
-  left: -59px; }
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode .arrow.left-arrow {
+  top: 8px; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode.found {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode .arrow.arrow.right-arrow {
+  top: -6px; }
+
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode.found {
   border: 2px solid orangered;
   background: #f3f3d0; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode.found .value {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode.found .value {
   border-right: 2px solid orangered; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode.header {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode.header {
   margin-left: 59px; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode .value {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode .value {
   float: left;
   width: 80px;
   border-right: 1px solid #535252;
@@ -73,6 +80,11 @@
   padding: 8px;
   text-align: left; }
 
-.Hash-Table-App .App-canvas .content .dllist .dllistnode .next {
+.Hash-Table-App .App-canvas .content .dLlist .dllistnode .next {
   width: 20px;
   float: left; }
+
+.Hash-Table-App .operation-time {
+  position: absolute;
+  bottom: 20px;
+  left: 20px; }

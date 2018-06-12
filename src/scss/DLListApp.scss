@@ -3,6 +3,9 @@ $table-border: 1px solid #535252;
   & .App-buttons {
     display: inline-block;
     margin: 20px;
+    & button {
+      margin: 0 5px;
+    }
     & .pull-left {
       float: left;
     }
@@ -28,7 +31,7 @@ $table-border: 1px solid #535252;
       height: auto;
       padding-bottom: 20px;
 
-      & .dllist {
+      & .dLlist {
         position: absolute;
         top: 10px;
         left: 165px;
@@ -46,8 +49,12 @@ $table-border: 1px solid #535252;
             position: absolute;
             float: left;
             left: -30px;
-            &.initial-arrow {
-              left: -59px;
+            font-size: 15px;
+            &.left-arrow {
+              top: 8px;
+            }
+            &.arrow.right-arrow {
+              top: -6px;
             }
           }
           &.found {
@@ -79,5 +86,10 @@ $table-border: 1px solid #535252;
         }
       }
     }
+  }
+  & .operation-time {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
   }
 }
