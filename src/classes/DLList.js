@@ -13,16 +13,21 @@ class DLList {
     if (pos.assertIsValid()) {
       let curr = pos.current();
       const prev = curr.getPrev();
-      prev.setNext(curr.getNext());
-      curr.getNext().setPrev(prev);
+      const next = curr.getNext();
+      prev.setNext(next);
+      next.setPrev(prev);
       curr = null;
       this.elements--;
-      return DLListIterator[Symbol.iterator](prev.getNext(), this);
+      return DLListIterator[Symbol.iterator](next, this);
     }
   }
   // Cost: O(1)
   insert(pos, val) {
-    if (pos === this.end() || pos.assertIsValid()) {
+    const endVal = this.end().current();
+    if (
+      (pos.assertIsValid() || pos.current() === endVal) &&
+      this.find(val).current() === endVal
+    ) {
       const curr = pos.current();
       const prev = curr.getPrev();
       const newNode = new DLListNode(prev, val, curr);
@@ -31,11 +36,12 @@ class DLList {
       this.elements++;
       return DLListIterator[Symbol.iterator](newNode, this);
     }
+    return DLListIterator[Symbol.iterator](null, this);
   }
   // Cost: O(n)
   find(item) {
     const iterator = this.begin();
-    while (iterator !== this.end()) {
+    while (iterator.current() !== this.end().current()) {
       if (iterator.current() !== null && iterator.current().getValue() === item)
         break;
       iterator.next();
@@ -86,19 +92,16 @@ class DLList {
     itr.prev();
     this.erase(itr);
   }
+
   // Cost: O(n)
   values() {
     const iterator = this.begin();
     const values = [];
     const reach = this.end();
-    reach.prev();
-
     while (iterator.current() !== reach.current()) {
-      if (iterator.current().getValue() !== null)
-        values.push(iterator.current().getValue());
+      values.push(iterator.current().getValue());
       iterator.next();
     }
-    values.push(iterator.current().getValue());
     return values;
   }
 

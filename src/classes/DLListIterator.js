@@ -8,13 +8,9 @@ const DLListIterator = {
         if (current === null || current.getPrev() === null) return false;
         return true;
       },
+
       next: () => {
-        if (
-          current === null ||
-          current.getNext() === null ||
-          current === dllist.tail ||
-          current.getNext() === dllist.tail
-        ) {
+        if (current === null || current.getNext() === null) {
           return {
             done: true
           };
@@ -29,8 +25,7 @@ const DLListIterator = {
         if (
           current === null ||
           current.getPrev() === null ||
-          current === dllist.header ||
-          current.getPrev() === dllist.header
+          current === dllist.header
         ) {
           return {
             done: true

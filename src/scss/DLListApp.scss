@@ -2,39 +2,43 @@ $table-border: 1px solid #535252;
 .Hash-Table-App {
   & .App-buttons {
     display: inline-block;
-    margin: 20px;
+    margin: 20px 0px;
+    padding: 0;
     & button {
       margin: 0 5px;
+      font-size: 0.8em;
     }
     & .pull-left {
       float: left;
     }
     & input {
-      height: 38px;
       margin-right: 20px;
       padding-left: 5px;
     }
     & #size-new {
       width: 50px;
     }
-    & #add-content,
-    & #find,
+    & #add-content {
+      width: 30%;
+    }
+    & #find {
+      width: 39%;
+    }
     & #erase {
-      width: 140px;
+      width: 8%;
     }
   }
   & .App-canvas {
     height: calc(100vh - 245px);
-    overflow: auto;
+    overflow-x: auto;
     & .content {
       width: auto;
-      height: auto;
+      height: 100%;
       padding-bottom: 20px;
 
       & .dLlist {
-        position: absolute;
-        top: 10px;
-        left: 165px;
+        position: relative;
+        margin: 140px 50px 0;
         display: inline-flex;
         & .dllistnode {
           height: 40px;
@@ -43,12 +47,12 @@ $table-border: 1px solid #535252;
           width: 100px;
           border: $table-border;
           position: relative;
-          margin-left: 30px;
+          margin-left: 35px;
           & .arrow {
             margin-top: 6px;
             position: absolute;
             float: left;
-            left: -30px;
+            left: -35px;
             font-size: 15px;
             &.left-arrow {
               top: 8px;
@@ -89,7 +93,7 @@ $table-border: 1px solid #535252;
   }
   & .operation-time {
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 20px;
   }
 }

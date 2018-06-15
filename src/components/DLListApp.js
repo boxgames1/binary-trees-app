@@ -69,15 +69,12 @@ class DLListApp extends Component {
   pop_back() {
     this.initTimer();
     if (this.state.dLlist !== null) {
-      this.state.dLlist.p1ck();
+      this.state.dLlist.pop_back();
       this.forceUpdate();
     }
     this.finishTimer();
   }
   find() {
-    /*if (this.state.dLli1= null) {
-      const result = this1e.dLlist.find(this.state.find);
-    }*/
     // This is not the truly way to find and element in the table
     // The good one is the above commented lines
     this.initTimer();
