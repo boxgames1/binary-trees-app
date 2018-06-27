@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import DLListApp from "./components/DLListApp";
+import BinaryNodeTreeApp from "./components/BinaryNodeTreeApp";
 
 class App extends Component {
   render() {
@@ -20,7 +19,7 @@ class App extends Component {
             <button
               className="btn btn-default"
               style={{
-                "margin-right": 10
+                marginRight: 10
               }}
             >
               Hash Tables
@@ -30,7 +29,7 @@ class App extends Component {
             <button
               className="btn btn-default"
               style={{
-                "margin-right": 10
+                marginRight: 10
               }}
             >
               Double Linked Lists
@@ -40,7 +39,7 @@ class App extends Component {
             <button
               className="btn btn-default"
               style={{
-                "margin-right": 10
+                marginRight: 10
               }}
             >
               Binary Trees
@@ -64,10 +63,9 @@ class App extends Component {
           />
         </a>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title"> Binary Trees React App </h1>
         </header>
-        <DLListApp />
+        <BinaryNodeTreeApp />
       </div>
     );
   }

@@ -1,0 +1,82 @@
+.Binary-Node-Tree-App .App-buttons {
+  display: inline-block;
+  margin: 20px 0px;
+  padding: 0; }
+
+.Binary-Node-Tree-App .App-buttons button {
+  margin: 0 5px;
+  font-size: 0.8em; }
+
+.Binary-Node-Tree-App .App-buttons .pull-left {
+  float: left; }
+
+.Binary-Node-Tree-App .App-buttons input {
+  margin-right: 20px;
+  padding-left: 5px; }
+
+.Binary-Node-Tree-App .App-buttons #size-new {
+  width: 50px; }
+
+.Binary-Node-Tree-App .App-buttons #add-content {
+  width: 30%; }
+
+.Binary-Node-Tree-App .App-buttons #find {
+  width: 39%; }
+
+.Binary-Node-Tree-App .App-buttons #erase {
+  width: 8%; }
+
+.Binary-Node-Tree-App .App-canvas {
+  height: calc(100vh - 245px);
+  overflow: auto; }
+
+.Binary-Node-Tree-App .App-canvas .content {
+  width: auto;
+  height: auto;
+  padding-bottom: 20px; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree {
+  position: relative;
+  margin: 30px 50px 0;
+  display: inline-block;
+  width: calc(100% - 100px); }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level {
+  width: 100%;
+  height: 120px; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode {
+  float: left; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode.void .round {
+  border: none; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode .round {
+  border: 1px solid #000;
+  border-radius: 30px;
+  padding: 15px 8px;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  position: relative; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode .round.found {
+  border: 2px solid red;
+  background: #f5f5c9; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode .round .value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; }
+
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode .round .left,
+.Binary-Node-Tree-App .App-canvas .content .bTree .Binary-Tree-Level .binarynode .round .right {
+  position: absolute;
+  height: 1px;
+  background-color: #000; }
+
+.Binary-Node-Tree-App .operation-time {
+  position: absolute;
+  bottom: 50px;
+  left: 20px; }

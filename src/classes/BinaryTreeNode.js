@@ -14,8 +14,7 @@ class BinaryTreeNode {
     if (newNode.key < node.key) {
       if (node.left === null) node.left = newNode;
       else this.insertNode(node.left, newNode);
-    }
-    if (newNode.key === node.key) {
+    } else if (newNode.key === node.key) {
       node.value = newNode.value;
     } else {
       if (node.right === null) node.right = newNode;
@@ -58,7 +57,7 @@ class BinaryTreeNode {
   }
   // Cost: O(1)
   empty() {
-    this.root === null;
+    return this.root === null;
   }
   // Cost: O(1)
   clear() {
@@ -74,14 +73,14 @@ class BinaryTreeNode {
   inorder(node, fn) {
     if (node !== null) {
       this.inorder(node.left, fn);
-      fn(node.value);
+      fn(node);
       this.inorder(node.right, fn);
     }
   }
   // Cost: O(n)
   preorder(node, fn) {
     if (node !== null) {
-      fn(node.value);
+      fn(node);
       this.preorder(node.left, fn);
       this.preorder(node.right, fn);
     }
@@ -91,28 +90,57 @@ class BinaryTreeNode {
     if (node !== null) {
       this.postorder(node.left, fn);
       this.postorder(node.right, fn);
-      fn(node.value);
+      fn(node);
     }
   }
 
-  search(node, key) {
+  find(node, key) {
     if (node === null) return null;
-    else if (key < node.key) return this.search(node.left, key);
-    else if (key > node.key) return this.search(node.right, key);
+    else if (key < node.key) return this.find(node.left, key);
+    else if (key > node.key) return this.find(node.right, key);
     else return node;
+  }
+  levelOrder() {
+    if (!this.root) return [];
+    var array = [];
+    search(this.root, 1, 1);
+
+    function search(node, level, index) {
+      if (node) {
+        const count = Math.pow(2, level - 1);
+        if (array.length < level) {
+          array.push(Array(count).fill(""));
+        }
+        var arr = array[level - 1];
+        arr[index - 1] = node;
+        const leftIndex = 2 * index - 1;
+        const rightIndex = 2 * index;
+        search(node.left, level + 1, leftIndex);
+        search(node.right, level + 1, rightIndex);
+      } else {
+        return;
+      }
+    }
+
+    return array;
+  }
+
+  values() {
+    if (!this.root) return [];
+    var array = [];
+    search(this.root, 1);
+
+    function search(node, level) {
+      if (node !== null) {
+        array.push(node.value);
+        search(node.left, level + 1);
+        search(node.right, level + 1);
+      } else {
+        array.push("");
+      }
+    }
+    return array;
   }
 }
 
-const tree = new BinaryTreeNode();
-tree.insert(1, { a: "dwedwedw", b: "ihdeuihdwe" });
-tree.insert(2, { g: "vne8e", w: "ihdeuihdwe" });
-tree.insert(4, { dwedwe: "frjre03", dede_b: 443 });
-tree.insert(5, { 7: "32fervc", "dedewd ew wed": "ihdeuihdwe" });
-tree.insert(3, 34252);
-tree.insert(6, { 23: "dweew", dedwe_swqs: 2 });
-console.log(tree.search(tree.root, 4).value);
-tree.insert(4, 3); //overwritting the key
-console.log(tree.search(tree.root, 4).value);
-tree.remove(2);
-console.log(tree.search(tree.root, 2));
-tree.preorder(tree.root, console.log);
+export default BinaryTreeNode;
