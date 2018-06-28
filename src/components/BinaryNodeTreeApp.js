@@ -18,13 +18,15 @@ class BinaryNodeTreeApp extends Component {
       find: "",
       remove: "",
       bTree: new BinaryTreeNode(),
-      operation_time: 0
+      operation_time: 0,
+      activateArrows: true
     };
     this.aux_timer = 0;
     this.onChangeInsertKey = this.onChangeInsertKey.bind(this);
     this.onChangeInsertValue = this.onChangeInsertValue.bind(this);
     this.onChangeFind = this.onChangeFind.bind(this);
     this.onChangeRemove = this.onChangeRemove.bind(this);
+    this.onChangeActivateArrow = this.onChangeActivateArrow.bind(this);
     this.insert = this.insert.bind(this);
     this.remove = this.remove.bind(this);
     this.find = this.find.bind(this);
@@ -48,8 +50,8 @@ class BinaryNodeTreeApp extends Component {
 
   remove() {
     this.initTimer();
-    if (this.state.bTree !== null) {
-      this.state.bTree.remove();
+    if (this.state.bTree !== null && !isNaN(this.state.remove)) {
+      this.state.bTree.remove(parseInt(this.state.remove, 10));
       this.forceUpdate();
     }
     this.finishTimer();
@@ -59,7 +61,7 @@ class BinaryNodeTreeApp extends Component {
     // The good one is the above commented lines
     this.initTimer();
     const found = document.querySelector(
-      '[data-key="' + this.state.find + '"]'
+      '[data-key="' + this.state.find + '"] .round'
     );
     if (found != null) {
       found.classList.add("found");
@@ -101,12 +103,28 @@ class BinaryNodeTreeApp extends Component {
       remove: e.target.value
     });
   }
+  onChangeActivateArrow() {
+    this.setState({
+      activateArrows: !this.state.activateArrows
+    });
+  }
 
   render() {
     const values = this.state.bTree !== null && this.state.bTree.levelOrder();
     return (
       <div className="Binary-Node-Tree-App">
         <div className="App-intro">
+          <div className="float-tree pull-left">
+            <input
+              type="checkbox"
+              id="activateArrow"
+              defaultChecked={this.state.activateArrows}
+              onChange={this.onChangeActivateArrow}
+            />
+            <label htmlFor="activateArrow">
+              * Activate arrows. Note that only the first 5 levels are painted.{" "}
+            </label>
+          </div>
           <div className="App-buttons col-md-12">
             {this.state.bTree !== null && (
               <div>
@@ -175,6 +193,7 @@ class BinaryNodeTreeApp extends Component {
                 {values.length > 0 &&
                   values.map((value, level) => (
                     <BinaryTreeLevel
+                      activateArrows={this.state.activateArrows}
                       key={level}
                       level={level + 1}
                       values={value}

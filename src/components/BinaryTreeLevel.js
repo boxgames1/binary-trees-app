@@ -15,8 +15,10 @@ const BinaryTreeLevel = props => {
             value={node.value}
             level={props.level}
             dataKey={node.key}
-            left={node !== "" && !(node.left === null)}
-            right={node !== "" && !(node.right === null)}
+            left={props.activateArrows && node !== "" && !(node.left === null)}
+            right={
+              props.activateArrows && node !== "" && !(node.right === null)
+            }
           />
         ))}
     </div>

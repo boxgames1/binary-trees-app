@@ -63,7 +63,18 @@ class App extends Component {
           />
         </a>
         <header className="App-header">
-          <h1 className="App-title"> Binary Trees React App </h1>
+          <h1 className="App-title">
+            {" "}
+            Binary Trees React App -{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-link"
+              href="https://github.com/boxgames1"
+            >
+              @boxgames1
+            </a>{" "}
+          </h1>
         </header>
         <BinaryNodeTreeApp />
       </div>
