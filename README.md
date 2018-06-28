@@ -1,4 +1,4 @@
-[Application Live Demo](https://fathomless-river-23726.herokuapp.com/)
+[Application Live Demo](https://binary-trees-app.herokuapp.com/)
 
 The application has been explained [in this article]
 
