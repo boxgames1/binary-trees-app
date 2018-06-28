@@ -15,7 +15,11 @@ class App extends Component {
             border: 0
           }}
         >
-          <a href="https://github.com/boxgames1/hash-tables-app">
+          <a
+            href="https://github.com/boxgames1/hash-tables-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               className="btn btn-default"
               style={{
@@ -25,7 +29,11 @@ class App extends Component {
               Hash Tables
             </button>
           </a>
-          <a href="https://github.com/boxgames1/double-linked-list-app">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/boxgames1/double-linked-list-app"
+          >
             <button
               className="btn btn-default"
               style={{
@@ -35,7 +43,11 @@ class App extends Component {
               Double Linked Lists
             </button>
           </a>
-          <a href="https://github.com/boxgames1/binary-trees-app">
+          <a
+            href="https://github.com/boxgames1/binary-trees-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               className="btn btn-default"
               style={{
