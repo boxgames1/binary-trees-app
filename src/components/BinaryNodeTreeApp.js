@@ -122,7 +122,8 @@ class BinaryNodeTreeApp extends Component {
               onChange={this.onChangeActivateArrow}
             />
             <label htmlFor="activateArrow">
-              * Activate arrows. Note that only the first 5 levels are painted.{" "}
+              * Activate arrows. Note that only the first 5 levels are painted
+              and probably they won't be well displayed in all devices.
             </label>
           </div>
           <div className="App-buttons col-md-12">

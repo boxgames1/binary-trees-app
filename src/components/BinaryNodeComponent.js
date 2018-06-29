@@ -100,7 +100,7 @@ const BinaryNodeComponent = props => {
   return (
     <div
       className={`binarynode${voidClass}`}
-      data-key={props.value}
+      data-key={props.dataKey}
       title={props.value}
       style={props.style}
     >
